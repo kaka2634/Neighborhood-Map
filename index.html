@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href='css/style.css'>
+    <title>Neighborhood map</title>
+</head>
+
+<body>
+    <!-- Show menu-icon and map -->
+    <div class="main">
+        <a class="menu-trigger"></a>
+        <div id="map"></div>
+    </div>
+    <!-- Show siderbar -->
+    <div class="sidebar">
+        <form action="#">
+            <input id="search" placeholder="Search…" type="search" name="q" data-bind="value: query, valueUpdate: 'keyup'" autocomplete="off">
+        </form>
+        <div>
+            <ul data-bind="template: {name:'location', foreach:locations}"></ul>
+            <button id="reset">Reset</button>
+        </div>
+    </div>
+
+    <!-- template script name location (use knockout)-->
+    <script type="text/html" id="location">
+            <li data-bind="attr: {id: num} ">
+              <strong data-bind="text: title"></strong>
+            </li>
+    </script>
+    <!-- import jquery-->
+    <script src="js/libs/jquery.min.js" type="text/javascript"></script>
+    <!-- import jquery tmpl support template-->
+    <script src='js/libs/jquery.tmpl.min.js'></script>
+    <!-- import knockout support data binding-->
+    <script src="js/libs/knockout-min.js"></script>
+    <script src='js/script.js'></script>
+    <!-- import google map -->
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDI20_be-1E0o8OxExZUaZxns6UkPDluSE&v=3&callback=initMap">
+    </script>
+
+</body>
+
+</html>

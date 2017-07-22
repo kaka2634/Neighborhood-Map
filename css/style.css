@@ -1,0 +1,112 @@
+body {
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+    -webkit-text-size-adjust: none;
+}
+
+.menu-trigger {
+    z-index: 3;
+    display: block;
+    position: fixed;
+    top: 20px;
+    left: 0px;
+    width: 34px;
+    height: 31px;
+    margin-left: 20px;
+    padding-top: 20px;
+    background: url(menu.gif) no-repeat;
+    -moz-transition: left 0.8s;
+    -webkit-transition: left 0.8s;
+    transition: left 0.8s;
+    cursor: pointer;
+}
+
+#map {
+    z-index: 1;
+    position: absolute;
+    right: 0px;
+    bottom: 0px;
+    left: 0px;
+    height: 100%;
+}
+
+.sidebar {
+    z-index: 2;
+    position: fixed;
+    top: 0;
+    left: -250px;
+    width: 250px;
+    height: 100%;
+    color: #333;
+    overflow: scroll;
+    background: #f8f8f8;
+    filter: alpha(opacity=80);
+    font-family: "lucida grande", tahoma, verdana, arial, sans-serif;
+    -moz-transition: left 0.8s;
+    -webkit-transition: left 0.8s;
+    transition: left 0.8s;
+    /* font-size: 15px; */
+}
+
+.sidebar form {
+    margin: 10px 12px;
+}
+
+.sidebar input[type="search"] {
+    display: block;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    width: 100%;
+    clear: both;
+    margin: 0 0 10px;
+    padding: 5px;
+    color: rgba(51, 51, 51, 0.6);
+    border: 0;
+    border-radius: 2px;
+    background: rgba(0, 0, 0, 0.1);
+    font-size: 25px;
+}
+
+.sidebar ul {
+    display: block;
+    margin: 0 0 15px;
+    padding: 0;
+    border-top: 1px solid #dfdfdf;
+    border-bottom: 1px solid white;
+}
+
+.sidebar ul li {
+    display: block;
+    margin: 0;
+    border-top: 1px solid white;
+    border-bottom: 1px solid #dfdfdf;
+    line-height: 48px;
+    cursor: pointer;
+}
+
+.sidebar ul li span, .sidebar ul li strong {
+    display: block;
+    padding: 0 15px;
+    color: #333;
+    text-decoration: none;
+}
+
+.sidebar ul li:hover {
+    border-top: 0;
+    box-shadow: 0 0 15px 5px #CCCCCC inset;
+    line-height: 49px;
+}
+
+#reset {
+    margin-left: 15px;
+}
+
+.move-menu {
+    left: 250px;
+}
+
+.move-sidebar {
+    left: 0px;
+}
