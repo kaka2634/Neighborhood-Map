@@ -20,6 +20,6 @@ Download the project and open the index.html by any browsers.
 
 1. All the code is validated and formated neatly.
 
-2. Error handling for ajax (Wiki data request use timeout and google view has its own function).
+2. Error handling for ajax and goole API(Wiki data request use timeout and error , goole map use onerror function and google view has its error own function).
 
 3. The map size and font size is reponsive for different window width.
