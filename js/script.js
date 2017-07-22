@@ -328,8 +328,8 @@ function populateInfoWindow(marker, infowindow) {
 
 
         //Error handle for wikipedia
-        var wikiRequestTimeout = setTimeout(function(){
-            content += '<div>'+'wiki seems not work'+'</div>';
+        var wikiRequestTimeout = setTimeout(function() {
+            content += '<div>' + 'wiki seems not work' + '</div>';
         }, 8000);
         //Get Wikipedia data
         var wikiUrl = 'http://en.wikipedia.org/w/api.php?action=opensearch&search=' + marker.title + '&format=json&callback=wikiCallback';
@@ -344,6 +344,13 @@ function populateInfoWindow(marker, infowindow) {
                 //console.log(articleStr);
                 var url = 'http://en.wikipedia.org/wiki/' + articleStr.split(' ').join('_');
                 content += '<div><a href=' + url + '>' + 'Wikipedia: ' + articleStr + '</a></div>';
+                infowindow.setContent(content);
+                infowindow.open(map, marker);
+                clearTimeout(wikiRequestTimeout);
+            },
+            //Error handling for ajax
+            error: function(jqXHR, textStatus, errorThrown) {
+                content += '<div>' + 'request wiki data meet error' + '</div>';
                 infowindow.setContent(content);
                 infowindow.open(map, marker);
                 clearTimeout(wikiRequestTimeout);
