@@ -41,9 +41,11 @@
     <!--import google mapError-->
     <script>
         //Error get googleMap
-        mapError = function() {
-            $('.main').html('<div>' + 'Can not connect to google map' + '</div>');
-        }
+        $(document).ready(function() {
+            mapError = function() {
+                $('.main').html('<div>' + 'Can not connect to google map' + '</div>');
+            }
+        });
     </script>
     <!-- import google map -->
     <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDI20_be-1E0o8OxExZUaZxns6UkPDluSE&v=3&callback=initMap" onerror="mapError()">
